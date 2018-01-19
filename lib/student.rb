@@ -66,6 +66,11 @@ class Student
       WHERE grade = 9
       SQL
 
-    DB[:conn].execute(sql).map{|row| Student.new_from_db(row)}
+    puts DB[:conn].execute(sql).map{|row| Student.new_from_db(row)}
   end
+
+  def self.student_below_12th_grade
+
+    sql = <<-SQL
+    SELECT
 end
