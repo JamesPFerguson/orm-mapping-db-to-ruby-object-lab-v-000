@@ -67,7 +67,6 @@ class Student
       FROM students
       WHERE grade = 9
       SQL
-      binding.pry
     DB[:conn].execute(sql).map{|row| Student.new_from_db(row)}
   end
 
