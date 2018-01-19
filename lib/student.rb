@@ -1,3 +1,5 @@
+require 'pry'
+
 class Student
   attr_accessor :id, :name, :grade
 
@@ -66,7 +68,7 @@ class Student
       WHERE grade = 9
       SQL
 
-    puts DB[:conn].execute(sql).map{|row| Student.new_from_db(row)}
+    DB[:conn].execute(sql).map{|row| Student.new_from_db(row)}
   end
 
   def self.student_below_12th_grade
