@@ -73,4 +73,6 @@ class Student
 
     sql = <<-SQL
     SELECT
+    SQL
+
 end
