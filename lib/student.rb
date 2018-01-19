@@ -30,6 +30,9 @@ class Student
       FROM students
       WHERE name = ?
       LIMIT 1
+      SQL
+
+      DB[:conn].execute(sql).map {|row| Student.new_from_db(row)}.first
   end
 
   def save
